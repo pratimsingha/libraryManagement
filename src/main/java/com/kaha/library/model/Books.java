@@ -10,9 +10,8 @@ public class Books {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "book_id", nullable = false)
     private Integer book_id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id", referencedColumnName = "author_id")
-    private Authors author_id;
+    @Column(name = "author_id", nullable = false)
+    private Integer author_id;
 //    @Column(name = "author_id", nullable = false)
 //    private Integer author_id;
     @Column(name = "book_title", nullable = false)
@@ -34,11 +33,11 @@ public class Books {
         this.book_id = book_id;
     }
 
-    public Authors getAuthor_id() {
+    public Integer getAuthor_id() {
         return author_id;
     }
 
-    public void setAuthor_id(Authors author_id) {
+    public void setAuthor_id(Integer author_id) {
         this.author_id = author_id;
     }
 

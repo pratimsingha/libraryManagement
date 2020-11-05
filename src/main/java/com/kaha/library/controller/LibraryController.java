@@ -2,6 +2,7 @@ package com.kaha.library.controller;
 
 import com.kaha.library.exceptions.GlobalException;
 import com.kaha.library.model.Authors;
+import com.kaha.library.model.BookRequest;
 import com.kaha.library.model.Books;
 import com.kaha.library.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,9 @@ public class LibraryController {
 
 
     @PostMapping(value = "/book", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void addBook(@RequestBody Books books) throws GlobalException {
+    public void addBook(@RequestBody BookRequest book) throws GlobalException {
         try{
-            libraryService.addBooks(books);
+            libraryService.addBooks(book);
         }catch(RuntimeException exception){
             throw new GlobalException(exception.getLocalizedMessage());
         }
