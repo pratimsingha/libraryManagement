@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="rollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>/home/pratim/Program/app.%d{_dd_MM_yyyy}.log</FileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="Console" />
+        <appender-ref ref="rollingFileAppender" />
+    </root>
+</configuration>

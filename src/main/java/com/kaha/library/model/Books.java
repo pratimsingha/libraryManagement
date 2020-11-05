@@ -12,10 +12,8 @@ public class Books {
     private Integer book_id;
     @Column(name = "author_id", nullable = false)
     private Integer author_id;
-//    @Column(name = "author_id", nullable = false)
-//    private Integer author_id;
     @Column(name = "book_title", nullable = false)
-    private String book_title;
+    private String bookTitle;
     @Column(name = "book_description", nullable = false)
     private String book_description;
     @Column(name = "book_category", nullable = false)
@@ -23,7 +21,7 @@ public class Books {
     @Column(name = "created_date", nullable = false)
     private Date created_date;
     @Column(name = "last_modified_date", nullable = false)
-    private Date last_modified_date;
+    private Date lastModifiedDate;
 
     public Integer getBook_id() {
         return book_id;
@@ -42,11 +40,11 @@ public class Books {
     }
 
     public String getBook_title() {
-        return book_title;
+        return bookTitle;
     }
 
     public void setBook_title(String book_title) {
-        this.book_title = book_title;
+        this.bookTitle = book_title;
     }
 
     public String getBook_description() {
@@ -74,10 +72,10 @@ public class Books {
     }
 
     public Date getLast_modified_date() {
-        return last_modified_date;
+        return lastModifiedDate;
     }
 
     public void setLast_modified_date(Date last_modified_date) {
-        this.last_modified_date = last_modified_date;
+        this.lastModifiedDate = last_modified_date;
     }
 }

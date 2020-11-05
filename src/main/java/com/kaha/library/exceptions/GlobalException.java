@@ -1,12 +1,30 @@
 package com.kaha.library.exceptions;
 
-public class GlobalException extends RuntimeException {
-    public GlobalException(String message) {
-        super(message);
+import org.springframework.http.HttpStatus;
+
+public class GlobalException {
+    private HttpStatus status;
+    private String message;
+    public GlobalException(HttpStatus status,String message) {
+        this.status = status;
+        this.message = message;
     }
 
-    @Override
-    public synchronized Throwable fillInStackTrace() {
-        return this;
+    public HttpStatus getStatus() {
+        return status;
     }
+
+    public void setStatus(HttpStatus status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+
 }
